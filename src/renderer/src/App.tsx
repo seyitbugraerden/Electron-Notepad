@@ -1,12 +1,13 @@
-import { Content, RootLayout, Sidebar } from './components'
+import { Content, NotePreviewList, RootLayout, Sidebar } from './components'
 import { ActionButtonsRow } from './components/ActionButtonsRow'
 
 const App = () => {
   return (
     <>
       <RootLayout>
-        <Sidebar className="p-2 text-black bg-black/80">
+        <Sidebar className="p-2 text-whşte bg-black/80">
           <ActionButtonsRow className="flex justify-between mt-1" />
+          <NotePreviewList className="mt-3 space-y-1" />
         </Sidebar>
         <Content className="border-l bg-zinc-900/50 border-l-white/20">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim numquam tempore atque
