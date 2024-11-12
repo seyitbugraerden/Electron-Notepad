@@ -1,4 +1,6 @@
 export * from './ActionButtonsRow'
 export * from './AppLayout'
+export * from './FloatingNotetitle'
+export * from './MarkDownEditor'
 export * from './NotePreview'
 export * from './NotePreviewList'
