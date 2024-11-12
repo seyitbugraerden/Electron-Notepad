@@ -11,10 +11,30 @@ function createWindow(): void {
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
+    center: true,
+    // frame: false,
+    title: 'NoteApp', // Uygulama Başlığı
+    vibrancy: 'under-window', // MacOS için pencere arka plan efekti
+    visualEffectState: 'active',
+    backgroundColor: '#ffffff', // Pencere arka plan rengi
+    resizable: true, // Pencere yeniden boyutlandırılabilir mi?
+    minimizable: true, // Pencere simge durumuna küçültülebilir mi?
+    maximizable: true, // Pencere maksimize edilebilir mi?
+    closable: true, // Pencere kapatılabilir mi?
+    fullscreen: false, // Tam ekran başlatma
+    fullscreenable: true, // Tam ekran yapılabilirlik
+    hasShadow: true, // Gölge ekler (Windows ve Mac)
+    opacity: 0.95, // Pencerenin saydamlık değeri (0 ile 1 arasında)
+    // titleBarStyle: 'hidden', // Pencere çubuğunu kapatır
+    // trafficLightPosition: { x: 15, y: 10 }, // Pencere işaretçi konumu
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: true,
       contextIsolation: true
+      // enableRemoteModule: false, // Güvenlik için remote modülünü devre dışı bırak
+      //spellcheck: true, // Yazım denetimini etkinleştir
+      //webSecurity: true, // Güvenlik duvarı gibi çalışır
+      //backgroundThrottling: false // Arka planda CPU throttling'i devre dışı bırak
     }
   })
 
