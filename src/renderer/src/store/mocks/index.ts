@@ -6,15 +6,15 @@ export const notesMock: NoteInfo[] = [
     lastEditTime: new Date().getTime()
   },
   {
-    title: 'Note 1',
+    title: 'Note example 1',
     lastEditTime: new Date().getTime()
   },
   {
-    title: 'Note 2',
+    title: 'Note example 2',
     lastEditTime: new Date().getTime()
   },
   {
-    title: 'Note 3',
+    title: 'Note example 3',
     lastEditTime: new Date().getTime()
   }
 ]
