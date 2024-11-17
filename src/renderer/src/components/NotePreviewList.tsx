@@ -3,7 +3,11 @@ import { ComponentProps } from 'react'
 import { NotePreview } from './NotePreview'
 
 export const NotePreviewList = ({ className, ...props }: ComponentProps<'ul'>) => {
-  const { notes, selectedNoteIndex, handleNoteSelect } = useNotesList()
+  const { notes, selectedNoteIndex, handleNoteSelect } = useNotesList({
+    onSelect: () => {
+      console.log('Note selected!')
+    }
+  })
 
   if (notes.length === 0) {
     return (
@@ -16,7 +20,12 @@ export const NotePreviewList = ({ className, ...props }: ComponentProps<'ul'>) =
   return (
     <ul className={className} {...props}>
       {notes.map((x, idx) => (
-        <NotePreview key={idx} {...x} />
+        <NotePreview
+          key={idx}
+          isActive={selectedNoteIndex === idx}
+          onClick={handleNoteSelect(idx)}
+          {...x}
+        />
       ))}
     </ul>
   )
