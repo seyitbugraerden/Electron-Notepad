@@ -2,12 +2,12 @@ import { useNotesList } from '@renderer/hooks/useNotesList'
 import { ComponentProps } from 'react'
 import { NotePreview } from './NotePreview'
 
-export const NotePreviewList = ({ className, ...props }: ComponentProps<'ul'>) => {
-  const { notes, selectedNoteIndex, handleNoteSelect } = useNotesList({
-    onSelect: () => {
-      console.log('Note selected!')
-    }
-  })
+export type PreviewListProps = ComponentProps<'ul'> & {
+  onSelect?: () => void
+}
+
+export const NotePreviewList = ({ onSelect, className, ...props }: PreviewListProps) => {
+  const { notes, selectedNoteIndex, handleNoteSelect } = useNotesList({ onSelect })
 
   if (notes.length === 0) {
     return (
