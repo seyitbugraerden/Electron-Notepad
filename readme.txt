@@ -80,3 +80,15 @@ declare global {
     }
   }
 }
+
+
+------ Dinamik Dataları localde kaydetme:
+
+Bunun için node.js write kullanıyoruz. Kurulum için src/main/lib dizinine ulaşıyoruz
+
+Bu işlemlerden önce fs-extra'yı projemize yüklüyoruz.
+
+npm install fs-extra (Node file system)
+
+node dosyalama sistemi için lodash (npm install lodash --save-dev)
+
